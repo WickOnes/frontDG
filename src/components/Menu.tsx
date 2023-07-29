@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from "react";
+import { ReactElement, useState } from "react";
 import { AuthletForm } from "./AuthletForm";
 
 export const Menu = () => {
@@ -8,13 +8,13 @@ export const Menu = () => {
     setElement(AuthletForm);
   };
 
-  if(element) return element
+  if (element) return element;
 
   return (
     <div className="Menu">
-        <button className="Authlet" onClick={createAuthlet}>
-          Аутлет
-        </button>
+      <button className="Authlet" onClick={createAuthlet}>
+        Аутлет
+      </button>
     </div>
   );
 };
