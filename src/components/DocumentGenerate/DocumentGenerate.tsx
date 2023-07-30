@@ -1,11 +1,9 @@
 import React from "react";
-import { Input } from "./Input/Input";
-import { ButtonPrimary } from "./ButtonPrimary/ButtonPrimary";
-import { getDocumentList } from "../servises/api/DocumentApi";
+import { Input } from "../Input/Input";
+import { ButtonPrimary } from "../ButtonPrimary/ButtonPrimary";
 
 
-
-export const AuthletForm = () => {
+export const DocumentGenerate = () => {
   const inputs = [
     {
       placeholder: "Торговий агент",
@@ -61,7 +59,7 @@ export const AuthletForm = () => {
   const object = Object.fromEntries(data);
   // console.log(object);
 
-  function add({target}: any) {
+  function add({ target }: any) {
     console.log(target.name, target.value);
 
     if (target.type === "checkbox") {
@@ -138,5 +136,3 @@ export const AuthletForm = () => {
     </div>
   );
 };
-
-
