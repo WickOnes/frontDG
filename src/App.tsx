@@ -6,34 +6,51 @@ import "./App.scss";
 import "./styles/Auth.scss";
 
 import {
+  NavLink,
   Navigate,
+  Route,
+  Router,
   RouterProvider,
+  Routes,
   createBrowserRouter,
 } from "react-router-dom";
 import { Main } from "./page/Main";
 import { Auth } from "./page/Auth";
+import { Nav } from "./components/Nav/Nav";
+import { Menu } from "./components/Menu";
+import { Header } from "./components/Header";
+import { BrowserRouter } from "react-router-dom";
+import { AuthletForm } from "./components/AuthletForm";
 
 function App() {
   return (
     <div className="App">
-      <RouterProvider router={router} />
+      <BrowserRouter>
+        <Header />
+        <Routes>{routeComponents}</Routes>
+      </BrowserRouter>
     </div>
   );
 }
 
-const router = createBrowserRouter([
+const routes = [
   {
     path: "/",
-    element: <Main />,
+    component: Main,
   },
   {
-    path: "/auth",
-    element: <Auth />,
+    path: "/Authlet",
+    component: AuthletForm,
   },
+  { path: "/Auth", component: Auth },
   {
     path: "*",
-    element: <Navigate to="/" replace={true} />,
+    component: Main,
   },
-]);
+];
+
+const routeComponents = routes.map(({ path, component }, key) => (
+  <Route path={path} Component={component} key={key} />
+));
 
 export default App;

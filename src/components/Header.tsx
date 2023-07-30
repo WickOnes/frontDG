@@ -1,3 +1,5 @@
+import { NavLink, Navigate } from "react-router-dom";
+
 export const Header = () => {
-  return <div>Header</div>;
+  return <NavLink to={"/"}>Main</NavLink>;
 };
