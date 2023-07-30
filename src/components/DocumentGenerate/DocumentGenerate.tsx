@@ -40,10 +40,15 @@ export const DocumentGenerate = () => {
     {
       placeholder: "Відтермінування",
       name: "postponement",
+      type: "radio",
+      value: [0, 7, 14, 21],
     },
+    
     {
       placeholder: "Прайс",
       name: "price",
+      type: "radio",
+      value: ["розниця", "СПТ", "аптека", "АЗС" , "хорека"],
     },
     {
       placeholder: "Контакти",
