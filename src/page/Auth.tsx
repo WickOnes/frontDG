@@ -15,13 +15,13 @@ export const Auth = () => {
         <Input
           placeholder="Login"
           title="Login"
-          onChange={(v: any) => setLoginValue(v.target.value)}
+          onChange={(v: any) => setLoginValue(v[1])}
         />
         <Input
           placeholder="********"
           title="Password"
           type="password"
-          onChange={(v: any) => setPasswordValue(v.target.value)}
+          onChange={(v: any) => setPasswordValue(v[1])}
         />
         <ButtonPrimary onClick={Login}>Login</ButtonPrimary>
       </div>
