@@ -1,68 +1,13 @@
 import React from "react";
 import { Input } from "../Input/Input";
 import { ButtonPrimary } from "../ButtonPrimary/ButtonPrimary";
+import { postData } from "../../servises/api/DocumentApi";
 
-
-export const DocumentGenerate = () => {
-  const inputs = [
-    {
-      placeholder: "Торговий агент",
-      name: "tradeName",
-    },
-    {
-      placeholder: "Тип ТТ",
-      name: "typeTradePoint",
-    },
-    {
-      placeholder: "Продукція",
-      name: "product",
-      type: "checkbox",
-      value: ["шоко", "корм", "ригли"],
-    },
-    {
-      placeholder: "День візиту",
-      name: "visitDey",
-    },
-    {
-      placeholder: "Назва клієнта",
-      name: "clientName",
-    },
-    {
-      placeholder: "Адреса доставки",
-      name: "address",
-    },
-    {
-      placeholder: "Форма оплати",
-      name: "formPay",
-      type: "radio",
-      value: ["нал2ф", "чек/факт", "чек/кр", "б/н"],
-    },
-    {
-      placeholder: "Відтермінування",
-      name: "postponement",
-      type: "radio",
-      value: [0, 7, 14, 21],
-    },
-    
-    {
-      placeholder: "Прайс",
-      name: "price",
-      type: "radio",
-      value: ["розниця", "СПТ", "аптека", "АЗС" , "хорека"],
-    },
-    {
-      placeholder: "Контакти",
-      name: "contact",
-    },
-    {
-      placeholder: "Телефон",
-      name: "phone",
-    },
-  ];
+export const DocumentGenerate = ({ obj }: any) => {
+  let inputs: any = obj.dataList;
 
   const data = new Map();
   const object = Object.fromEntries(data);
-  // console.log(object);
 
   function add({ target }: any) {
     console.log(target.name, target.value);
@@ -79,17 +24,17 @@ export const DocumentGenerate = () => {
     } else data.set(target.name, target.value);
   }
 
-  function genereta() {
-    console.log(data);
+  function sendData() {
+    postData(data);
   }
 
   return (
     <div>
-      {inputs.map((v, index) => {
+      {inputs.map((v: any, index: number) => {
         if (v.type === "radio") {
           return (
             <div key={index}>
-              {v.value.map((element, index) => {
+              {v.value.map((element: any, index: number) => {
                 return (
                   <div key={index}>
                     <Input
@@ -109,7 +54,7 @@ export const DocumentGenerate = () => {
         if (v.type === "checkbox") {
           return (
             <div key={index}>
-              {v.value.map((element, index) => {
+              {v.value.map((element: any, index: number) => {
                 return (
                   <div key={index}>
                     <Input
@@ -137,7 +82,7 @@ export const DocumentGenerate = () => {
         );
       })}
 
-      <ButtonPrimary onClick={genereta}>Generete</ButtonPrimary>
+      <ButtonPrimary onClick={sendData}>Generete</ButtonPrimary>
     </div>
   );
 };
