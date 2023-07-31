@@ -13,9 +13,26 @@ export async function postData(data: any) {
     }
   }
 
-  const json = JSON.stringify(obj);
+  const response: any = await axios.post(
+    "http://localhost:3001/api/document",
+    {
+      id: 0,
+      name: "Test",
+      data: obj,
+    },
+    {
+      responseType: "blob",
+    }
+  );
 
-  const document: any = await axios.post("http://localhost:3001/api/document", json);
+  if (response.status === 200) {
+    console.log(response.data);
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(response.data);
+    link.download = "test";
+    link.click();
+    link.remove();
+  }
 
-  console.log(json);
+  console.log(document);
 }
