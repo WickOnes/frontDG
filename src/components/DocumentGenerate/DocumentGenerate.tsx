@@ -2,6 +2,7 @@ import React from "react";
 import { Input } from "../Input/Input";
 import { ButtonPrimary } from "../ButtonPrimary/ButtonPrimary";
 import { postData } from "../../servises/api/DocumentApi";
+import "./DocumentGenerate.scss"
 
 
 export const DocumentGenerate = ({ obj }: any) => {
