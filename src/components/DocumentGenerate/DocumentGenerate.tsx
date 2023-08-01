@@ -1,5 +1,4 @@
 import React from "react";
-import "./DocumentGenerate.scss"
 import { Input } from "../Input/Input";
 import { ButtonPrimary } from "../ButtonPrimary/ButtonPrimary";
 import { postData } from "../../servises/api/DocumentApi";
