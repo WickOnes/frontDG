@@ -14,7 +14,7 @@ export async function postData(data: any) {
   }
 
   const response: any = await axios.post(
-    "http://localhost:3001/api/document",
+    "https://dgsv.onrender.com/api/document",
     {
       id: 0,
       name: "Test",

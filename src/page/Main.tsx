@@ -1,14 +1,11 @@
 import React from "react";
-
-import { Menu } from "../components/Menu";
 import { Nav } from "../components/Nav/Nav";
+import { Header } from "../components/Header/Header";
 
 export const Main = () => {
   return (
     <div className="main">
-   
-      <Menu />
-      
+ 
       <Nav />
 
     </div>

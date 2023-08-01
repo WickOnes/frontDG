@@ -5,29 +5,22 @@ import "./App.scss";
 
 import "./styles/Auth.scss";
 
-import {
-  NavLink,
-  Navigate,
-  Route,
-  Router,
-  RouterProvider,
-  Routes,
-  createBrowserRouter,
-} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Main } from "./page/Main";
 import { Auth } from "./page/Auth";
-import { Nav } from "./components/Nav/Nav";
-import { Menu } from "./components/Menu";
-import { Header } from "./components/Header";
+
+import { Header } from "./components/Header/Header";
 import { BrowserRouter } from "react-router-dom";
-import { AuthletForm } from "./components/AuthletForm";
+import { AuthletForm } from "./components/AuthletForm/AuthletForm";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Header />
-        <Routes>{routeComponents}</Routes>
+        <div className="content">
+          <Routes>{routeComponents}</Routes>
+        </div>
       </BrowserRouter>
     </div>
   );

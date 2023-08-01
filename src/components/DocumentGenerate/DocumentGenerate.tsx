@@ -2,12 +2,12 @@ import React from "react";
 import { Input } from "../Input/Input";
 import { ButtonPrimary } from "../ButtonPrimary/ButtonPrimary";
 import { postData } from "../../servises/api/DocumentApi";
+import "./documentGenerate.scss"
 
 export const DocumentGenerate = ({ obj }: any) => {
   let inputs: any = obj.dataList;
 
   const data = new Map();
-  const object = Object.fromEntries(data);
 
   function add({ target }: any) {
     console.log(target.name, target.value);
@@ -29,11 +29,11 @@ export const DocumentGenerate = ({ obj }: any) => {
   }
 
   return (
-    <div>
+    <div className="input-content">
       {inputs.map((v: any, index: number) => {
         if (v.type === "radio") {
           return (
-            <div key={index}>
+            <div key={index} className="input-content__radio">
               {v.value.map((element: any, index: number) => {
                 return (
                   <div key={index}>
@@ -53,10 +53,10 @@ export const DocumentGenerate = ({ obj }: any) => {
         }
         if (v.type === "checkbox") {
           return (
-            <div key={index}>
+            <div key={index} className="input-content__cheackbox">
               {v.value.map((element: any, index: number) => {
                 return (
-                  <div key={index}>
+                  <div key={index} >
                     <Input
                       {...v}
                       value={element}
@@ -73,12 +73,14 @@ export const DocumentGenerate = ({ obj }: any) => {
         }
 
         return (
-          <Input
-            {...v}
-            key={index}
-            onChange={add}
-            placeholder={v.placeholder}
-          />
+        
+            <Input
+              {...v}
+              key={index}
+              onChange={add}
+              placeholder={v.placeholder}
+            />
+        
         );
       })}
 

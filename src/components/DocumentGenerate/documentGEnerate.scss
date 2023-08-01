@@ -1,0 +1,16 @@
+.input-content{
+    margin-top: 16px;
+    display: grid;
+    gap: 16px;
+
+    &__radio{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    &__cheackbox{
+        display: flex;
+        justify-content: space-evenly;
+        
+    }
+}

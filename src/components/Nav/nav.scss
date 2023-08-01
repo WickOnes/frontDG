@@ -1,0 +1,25 @@
+.nav {
+  border: 0;
+  border-radius: 16px;
+  background: var(--color-turquoise);
+  padding: 16px 20px;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.15px;
+  text-align: center;
+  font-weight: 500;
+ 
+
+  li {
+    list-style: none;
+    
+  }
+
+  &__navLink{
+    color: var(--text-color-white);
+  }
+}

@@ -1,13 +1,19 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { Header } from "../Header/Header";
+import "./nav.scss";
 
 export const Nav = () => {
   return (
-    <ul className='nav'>
+    <div>
+      <ul className="nav">
         <li>
-            <NavLink to={'/'}>Main</NavLink>
-            <NavLink to={'/Authlet'}>Authlet</NavLink>
+          {/* <NavLink to={'/'}>Main</NavLink> */}
+          <NavLink className="navLink nav__navLink" to={"/Authlet"}>
+            Аутлет
+          </NavLink>
         </li>
-    </ul>
-  )
-}
+      </ul>
+    </div>
+  );
+};
