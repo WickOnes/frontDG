@@ -8,7 +8,16 @@ export const Nav = () => {
     <div>
       <ul className="nav">
         <li>
-          {/* <NavLink to={'/'}>Main</NavLink> */}
+          <NavLink className="navLink nav__navLink" to={"/Authlet"}>
+            Аутлет
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className="navLink nav__navLink" to={"/Authlet"}>
+            Аутлет
+          </NavLink>
+        </li>
+        <li>
           <NavLink className="navLink nav__navLink" to={"/Authlet"}>
             Аутлет
           </NavLink>
