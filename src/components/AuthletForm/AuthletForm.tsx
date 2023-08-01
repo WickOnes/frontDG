@@ -1,7 +1,6 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, {useMemo, useState } from "react";
 import { getDocumentList } from "../../servises/api/DocumentApi";
 import { DocumentGenerate } from "../DocumentGenerate/DocumentGenerate";
-import { setInterval } from "timers";
 import { Loader } from "../Loader/Loader";
 
 export const AuthletForm = () => {
