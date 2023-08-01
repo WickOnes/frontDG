@@ -1,8 +1,9 @@
 import React from "react";
+import "./DocumentGenerate.scss"
 import { Input } from "../Input/Input";
 import { ButtonPrimary } from "../ButtonPrimary/ButtonPrimary";
 import { postData } from "../../servises/api/DocumentApi";
-import "./DocumentGenerate.scss"
+
 
 export const DocumentGenerate = ({ obj }: any) => {
   let inputs: any = obj.dataList;
